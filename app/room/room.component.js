@@ -5,9 +5,10 @@
     .component("room", {
       controller: "RoomController",
       templateUrl: "app/room/room.template.html",
-      
+
       bindings: {
-        data: "<"
+        room : "<",
+        username : "<"
       }
 
     });

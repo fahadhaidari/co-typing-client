@@ -1,5 +1,5 @@
 <h2 style = "color:#222222;">Roomlist</h2>
-<input type = "text" placeholder = "Enter your username...">
+<input type = "text" ng-model = "username" placeholder = "Enter your username...">
 <div ng-repeat = "room in $ctrl.rooms">
-  <room data = "room"></room>
+  <room room = "room" username = "username"></room>
 </div>
