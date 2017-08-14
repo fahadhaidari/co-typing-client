@@ -7,5 +7,4 @@
       templateUrl: "app/room/room.template.html"
     });
 
-
 })();
