@@ -4,7 +4,12 @@
     .module("cotyping")
     .component("room", {
       controller: "RoomController",
-      templateUrl: "app/room/room.template.html"
+      templateUrl: "app/room/room.template.html",
+      
+      bindings: {
+        data: "<"
+      }
+
     });
 
 })();
