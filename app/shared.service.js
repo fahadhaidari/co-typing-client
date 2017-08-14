@@ -1,4 +1,5 @@
-const socket = io.connect("http://localhsot:8080");
+// const socket = io.connect('http://localhost:8080');
+
 (function() {
 
   angular

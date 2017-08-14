@@ -1,14 +1,19 @@
+const socket = io.connect('http://localhost:8080');
+
+
 (function() {
+
 
   var app = angular
     .module("cotyping")
     .controller("RoomListController", RoomListController);
 
-    function RoomListController($http) {
+    function RoomListController($http, SharedService) {
       console.log("Room Controller");
       const vm = this;
+      vm.SharedService = SharedService;
       vm.roomName = "";
-      
+
       vm.rooms = [
         // {
         //   name:"Room1",
