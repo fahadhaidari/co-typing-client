@@ -27,6 +27,10 @@
 
     let socket = io.connect("http://localhost:8080");
 
+    socket.on("on connection", function(_message) {
+      console.log(_message);
+    });
+
 
   </script>
 
