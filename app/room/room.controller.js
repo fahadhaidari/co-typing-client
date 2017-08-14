@@ -4,12 +4,16 @@
     .module("cotyping")
     .controller("RoomController", RoomController);
 
-    function RoomController() {
+    function RoomController(SharedService) {
       console.log("Room Controller");
       const vm = this;
+      vm.sharedService = SharedService;
+
 
       vm.joinRoom = () => {
-        console.log("Joining room ", vm.username)
+        console.log("Joining room ", vm.username);
+
+
       }
 
     }
