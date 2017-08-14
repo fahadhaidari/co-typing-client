@@ -3,3 +3,10 @@
 <div ng-repeat = "room in $ctrl.rooms">
   <room room = "room" username = "username"></room>
 </div>
+<br>
+<div class = "" style = "">
+  <h3>Create a room</h3>
+  <input type="text" ng-model = "$ctrl.roomName" placeholder = "Enter room name...">
+  <button type="button" ng-click = "$ctrl.createRoom()">Create room</button>
+
+</div>

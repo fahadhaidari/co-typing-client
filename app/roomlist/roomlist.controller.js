@@ -7,6 +7,8 @@
     function RoomListController($http) {
       console.log("Room Controller");
       const vm = this;
+      vm.roomName = "";
+      
       vm.rooms = [
         // {
         //   name:"Room1",
@@ -27,6 +29,10 @@
         vm.rooms = rooms.data;
         console.log("Rooms " , rooms.data);
       })
+
+      vm.createRoom = function () {
+        console.log("Creating room ", vm.roomName);
+      }
 
 
 
