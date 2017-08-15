@@ -2,6 +2,6 @@
   "use strict";
 
   var app = angular
-    .module("cotyping", []);
+    .module("cotyping", ["ui.router"]);
 
 })();
