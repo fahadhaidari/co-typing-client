@@ -1,7 +1,9 @@
 const socket = io.connect('http://localhost:8080');
-
+var userName = "";
 
 (function() {
+
+
 
   angular
       .module("cotyping")
@@ -16,6 +18,14 @@ const socket = io.connect('http://localhost:8080');
 
           getSocket () {
             return socket;
+          },
+
+          setUserName (_userName) {
+            userName = _userName;
+          },
+
+          getUserName () {
+            return userName;
           }
         }
 

@@ -20,10 +20,16 @@
       socket.emit("join room", info);
 
 
-      $state.go('story');
 
       socket.on("joined", function(_userName) {
         console.log("User ", _userName, " joined the room");
+      });
+
+      socket.on("success", function(_userName) {
+        console.log("The message only to me is ", _userName);
+        vm.sharedService.setUserName(_userName);
+        $state.go('story');
+        
       });
 
 

@@ -1,0 +1,14 @@
+* {
+  font-family: sans-serif;
+}
+
+html, body {
+  background: #EEEEEE;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
