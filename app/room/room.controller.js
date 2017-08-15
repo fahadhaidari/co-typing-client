@@ -11,7 +11,13 @@
 
 
       vm.joinRoom = () => {
-        console.log("Joining room ", vm.username);
+        console.log("Joining room ", vm.room.name, " User ", vm.username);
+        let info = {
+          userName: vm.username,
+          roomName: vm.room.name
+        }
+
+        socket.emit("join room", info);
 
 
       }
