@@ -20,6 +20,11 @@
         socket.emit("join room", info);
 
 
+        socket.on("joined", function(_userName) {
+          console.log("User ", _userName , " joined the room");
+        });
+
+
       }
 
     }
