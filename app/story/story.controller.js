@@ -24,6 +24,10 @@
         socket.emit("message", info);
       }
 
+      socket.on("message", function(_info){
+        console.log("User ", _info.userName, " typed ", _info.message);
+      });
+
     }
 
 })();
