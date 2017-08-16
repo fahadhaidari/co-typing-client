@@ -4,7 +4,7 @@
     .module("cotyping")
     .controller("StoryController", StoryController);
 
-  function StoryController($scope, SharedService) {
+  function StoryController($scope, $state, SharedService) {
     console.log("Story Controller");
     const vm = this;
     vm.sharedService = SharedService;
@@ -51,6 +51,14 @@
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
       });
+    });
+
+    socket.on("signout success", function(_info) {
+      console.log("User ", _info.userName, " left ", _info.roomName);
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
+      $state.go("home");
     });
 
   }

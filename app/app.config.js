@@ -15,7 +15,15 @@
         component: "story"
       });
 
-      $urlServiceProvider.rules.otherwise({state: "home"})
+    $stateProvider
+      .state("home", {
+        url: "/"
+        // component: "story"
+      });
+
+    $urlServiceProvider.rules.otherwise({
+      state: "home"
+    })
   }
 
 })();
