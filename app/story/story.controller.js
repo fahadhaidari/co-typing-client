@@ -4,7 +4,7 @@
     .module("cotyping")
     .controller("StoryController", StoryController);
 
-  function StoryController($scope, $state, SharedService) {
+  function StoryController($scope, $state, $window, SharedService) {
     console.log("Story Controller");
     const vm = this;
     vm.sharedService = SharedService;
@@ -15,6 +15,8 @@
     vm.inputText = "";
 
     console.log("I user ", vm.userName);
+
+
 
     vm.keyUp = () => {
       console.log("Typing ", event.keyCode);
@@ -60,6 +62,11 @@
       });
       $state.go("home");
     });
+
+
+    $window.onbeforeunload = function(event) {
+      vm.signout();
+    }
 
   }
 
