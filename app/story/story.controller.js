@@ -18,6 +18,11 @@
 
       vm.keyUp = (event) => {
         console.log("Typing ", event.keyCode);
+        let info = {
+          userName: vm.userName,
+          message: event.keyCode
+        }
+        socket.emit("message", info);
       }
 
     }
