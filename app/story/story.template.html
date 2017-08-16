@@ -1,4 +1,4 @@
 
 <h2 style = "color:#222222;">Story view...</h2>
 <h3>{{$ctrl.userName}}</h3>
-<textarea name="name" rows="8" cols="80"></textarea>
+<textarea ng-keyup = "$ctrl.keyUp($event)" name="name" rows="8" cols="80"></textarea>

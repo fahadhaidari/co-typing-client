@@ -16,8 +16,8 @@
 
 
 
-      vm.test = () => {
-
+      vm.keyUp = (event) => {
+        console.log("Typing ", event.keyCode);
       }
 
     }
