@@ -19,8 +19,6 @@
 
       socket.emit("join room", info);
 
-
-
       socket.on("joined", function(_userName) {
         console.log("User ", _userName, " joined the room");
       });
@@ -28,8 +26,9 @@
       socket.on("success", function(_userName) {
         console.log("The message only to me is ", _userName);
         vm.sharedService.setUserName(_userName);
+        vm.sharedService.setRoomName(info.roomName);
         $state.go('story');
-        
+
       });
 
 
