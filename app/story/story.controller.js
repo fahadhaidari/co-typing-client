@@ -27,9 +27,26 @@
       socket.emit("message", info);
     }
 
+    vm.signout = () => {
+      console.log("Leaving room...");
+      let info = {
+        userName: vm.userName,
+        roomName: vm.roomName
+      }
+      socket.emit("signout", info);
+    }
+
     socket.on("message", function(_info) {
       console.log("User ", _info.userName, " typed ", _info.message);
       vm.inputText = _info.message;
+
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
+    });
+
+    socket.on("user signout", function(_info) {
+      console.log("User ", _info.userName, " left ", _info.roomName);
 
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';

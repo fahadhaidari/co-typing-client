@@ -3,7 +3,7 @@
 }
 
 html, body {
-  background: #EEEEEE;
+  background: #FFFFFF;
   margin: 0 auto;
   font-size: 100%;
 }
@@ -11,4 +11,16 @@ html, body {
 textarea {
   resize: none;
   border: none;
+}
+
+main {
+  width: 98vw;
+  margin: 1vw auto;
+  background: #EEEEEE;
+  text-align: center;
+  display: block;
+}
+
+button {
+  margin: 1vw;
 }
