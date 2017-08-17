@@ -12,6 +12,8 @@
     vm.userName = vm.sharedService.getUserName();
     vm.roomName = vm.sharedService.getRoomName();
 
+    vm.message = vm.sharedService.getMessage();
+
     vm.inputText = "";
 
     console.log("I user ", vm.userName);
@@ -49,7 +51,7 @@
 
     socket.on("user signout", function(_info) {
       console.log("User ", _info.userName, " left ", _info.roomName);
-
+      // vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
       });
@@ -57,10 +59,30 @@
 
     socket.on("signout success", function(_info) {
       console.log("User ", _info.userName, " left ", _info.roomName);
+      // vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
+      socket.emit("signed out", _info);
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
       });
       $state.go("home");
+    });
+
+    socket.on("signed out", function(_info) {
+      console.log("User ", _info.userName, " left ", _info.roomName);
+      vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
+      vm.message = vm.sharedService.getMessage();
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
+      // $state.go("home");
+    });
+
+    socket.on("joined", function(_userName) {
+      console.log("User ", _userName, " joined the room");
+      vm.message = vm.sharedService.getMessage();
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
     });
 
 

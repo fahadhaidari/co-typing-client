@@ -25,6 +25,14 @@ button {
   margin: 1vw;
 }
 
+.console {
+  width: 50%;
+  height: 10%;
+  margin: 1vw auto;
+  background: #DDDDDD;
+  color: #333333;
+}
+
 .margined {
   margin: 1vw auto;
 }

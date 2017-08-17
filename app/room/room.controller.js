@@ -4,10 +4,12 @@
     .module("cotyping")
     .controller("RoomController", RoomController);
 
-  function RoomController(SharedService, $state) {
+  function RoomController($state, $scope, SharedService) {
     console.log("Room Controller");
     const vm = this;
     vm.sharedService = SharedService;
+
+    vm.username = "";
 
     vm.joinRoom = () => {
       if (isValidInput(vm.username)) {
@@ -22,6 +24,10 @@
 
         socket.on("joined", function(_userName) {
           console.log("User ", _userName, " joined the room");
+          vm.sharedService.setMessage("User " +  _userName + " joined the room");
+          $scope.$applyAsync(function() {
+            $scope.connected = 'TRUE';
+          });
         });
 
         socket.on("success", function(_userName) {

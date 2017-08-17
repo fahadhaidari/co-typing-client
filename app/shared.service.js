@@ -1,6 +1,7 @@
 const socket = io.connect('http://localhost:8080');
 var userName = "";
 var roomName = "";
+var message = "";
 
 (function() {
 
@@ -33,6 +34,14 @@ var roomName = "";
 
           getRoomName () {
             return roomName;
+          },
+
+          setMessage (_message) {
+            message = _message;
+          },
+
+          getMessage () {
+            return message;
           }
         }
 
