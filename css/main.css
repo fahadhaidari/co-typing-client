@@ -16,11 +16,19 @@ textarea {
 main {
   width: 98vw;
   margin: 1vw auto;
-  background: #EEEEEE;
+  background: #FFFFFF;
   text-align: center;
   display: block;
 }
 
 button {
   margin: 1vw;
+}
+
+.margined {
+  margin: 1vw auto;
+}
+
+.box {
+  width: 50vw;
 }
