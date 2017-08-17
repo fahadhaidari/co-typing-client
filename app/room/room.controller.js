@@ -9,32 +9,43 @@
     const vm = this;
     vm.sharedService = SharedService;
 
-
     vm.joinRoom = () => {
-      console.log("Joining room ", vm.room.name, " User ", vm.username);
-      let info = {
-        userName: vm.username,
-        roomName: vm.room.name,
-        users: vm.room.users
+      if (isValidInput(vm.username)) {
+        console.log("Joining room ", vm.room.name, " User ", vm.username);
+        let info = {
+          userName: vm.username,
+          roomName: vm.room.name,
+          users: vm.room.users
+        }
+
+        socket.emit("join room", info);
+
+        socket.on("joined", function(_userName) {
+          console.log("User ", _userName, " joined the room");
+        });
+
+        socket.on("success", function(_userName) {
+          console.log("The message only to me is ", _userName);
+          vm.sharedService.setUserName(_userName);
+          vm.sharedService.setRoomName(info.roomName);
+          $state.go('story');
+        });
+
+        socket.on("user exist", function(_userName) {
+          console.log("User does exist");
+        });
+
       }
-
-      socket.emit("join room", info);
-
-      socket.on("joined", function(_userName) {
-        console.log("User ", _userName, " joined the room");
-      });
-
-      socket.on("success", function(_userName) {
-        console.log("The message only to me is ", _userName);
-        vm.sharedService.setUserName(_userName);
-        vm.sharedService.setRoomName(info.roomName);
-        $state.go('story');
-
-      });
-
-
     }
 
+  }
+
+  function isValidInput(_string) {
+    var patt = /[a-z]/g;
+    var result = patt.test(_string);
+    if (_string.length > 2 && result) {
+      return true;
+    }
   }
 
 })();

@@ -32,3 +32,20 @@ button {
 .box {
   width: 50vw;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999999;
+  font-size: 0.8rem;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999999;
+  font-size: 0.8rem;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #999999;
+  font-size: 0.8rem;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999999;
+  font-size: 0.8rem;
+}
