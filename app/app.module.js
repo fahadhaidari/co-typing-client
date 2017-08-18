@@ -2,7 +2,7 @@
   "use strict";
 
   var app = angular
-    .module("cotyping", ["ui.router"])
+    .module("cotyping", ["ui.router", "ngclipboard"])
     .controller("MainController", MainController);
 
     function MainController($scope, SharedService) {
