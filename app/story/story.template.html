@@ -1,7 +1,8 @@
 <div class="container">
+  <button type="button" class = "btn btn-danger" style = "float:left;" ng-click="$ctrl.signout()">Log out</button>
+
   <h2 style="color:#222222;">Story view...</h2>
   <h3>{{$ctrl.userName}}</h3>
   <textarea ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" rows="8" cols="80" autofocus></textarea>
-  <button type="button" ng-click="$ctrl.signout()">Log out</button>
   <div class="console">{{$ctrl.message}}</div>
 </div>
