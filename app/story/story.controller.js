@@ -49,7 +49,7 @@
       console.log("User ", _info.userName, " typed ", _info.message);
       vm.inputText = _info.message;
 
-      vm.otherUserEdit = _info.userName + " is typing";
+      vm.otherUserEdit = _info.userName + " is typing...";
 
       $timeout(function() {
        vm.otherUserEdit = "";
@@ -87,7 +87,7 @@
       vm.sharedService.setHideMainElements(false);
 
       vm.sharedService.removeUser(_info.userName);
-      
+
       vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';

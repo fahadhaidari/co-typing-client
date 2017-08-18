@@ -1,8 +1,22 @@
 <!-- <div class="container"> -->
 
   <!-- <h2 style = "color:#222222;">{{$ctrl.room}}</h2> -->
-  <div class = "well well-sm">
+  <!-- <div class = "well well-sm">
     <h3>{{$ctrl.room.name}}</h3>
     <button type="button" class="btn btn-primary" ng-click="$ctrl.joinRoom()">Join</button>
   </div>
+ -->
+
+
+
+  <ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge" style = "background:#FFFFFF; color:#444444;"><p>{{$ctrl.room.owner}}</p></span>
+      <strong>{{$ctrl.room.name}}</strong><br/>
+      <button type="button" class="btn btn-primary" ng-click="$ctrl.joinRoom()">Join</button>
+
+  </li>
+</ul>
+
+
 <!-- </div> -->

@@ -10,17 +10,6 @@
 
 
 
-<div class="sideBar">
-
-
-  <h4 style="color:#333333;">Users</h4>
-  <div class="" ng-repeat="user in $ctrl.sharedService.getUsers()">
-
-    <small>{{user}}</small>
-
-  </div>
-
-</div>
 
 <div class="container">
 
@@ -42,6 +31,7 @@
 
   <i style="float:left; color:#4477FF;">{{$ctrl.otherUserEdit}}</i>
 
+  <br><br>
 
   <div class="">{{$ctrl.message}}</div>
 
@@ -50,8 +40,36 @@
 
   <!-- <button type="button" class = "btn btn-link" style = "float:left;" ng-click="$ctrl.signout()">Log out</button> -->
 
-  <button type="button" class="btn btn-info" style="float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
+  <button type="button" class="btn btn-primary" style="float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
 
 
 
+</div>
+
+<!--
+<div class="well box margined">
+
+
+
+
+
+  <h5 style="color:#333333;">Users</h5>
+  <div class="" ng-repeat="user in $ctrl.sharedService.getUsers()">
+
+    <small>{{user}}</small>
+
+  </div>
+
+</div> -->
+
+
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Users in this room</h3>
+  </div>
+  <div class="panel-body" ng-repeat="user in $ctrl.sharedService.getUsers()">
+    <small>{{user}}</small>
+
+  </div>
 </div>
