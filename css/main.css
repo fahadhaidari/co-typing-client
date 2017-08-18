@@ -15,33 +15,37 @@ input {
 
 textarea {
   resize: none;
-  border: solid 1px #DDDDDD;
-  border-radius: 10px;
-  box-shadow: none;
+  /*border: solid 1px #DDDDDD;*/
+  /*border-radius: 10px;*/
+  /*box-shadow: none;*/
   outline: none;
-  width: 50vw;
+  width: 50vw;*/
+  height: 70vh;*/
   margin: 0 auto;
   display: block;
 }
 
 main {
-  /*width: 98vw;
+  width: 98vw;
   margin: 1vw auto;
   background: #FFFFFF;
-  text-align: center;
-  display: block;*/
+  /*text-align: center;*/
+  display: block;
 }
 
 .container {
   width: 80vw;
   margin: 1vw auto;
   background: #FFFFFF;
+  /*border: solid 2px #EEEEEE;*/
+  /*border-radius: 10px;*/
+  padding: 5px;
   display: block;
 }
 
 button {
   margin: 1vw;
-  /*display: block;*/
+  display: block;
 }
 
 .sideBar {
@@ -50,7 +54,7 @@ button {
   position: fixed;
   left:0.2vw;
   top:20vh;
-  width:10vw;
+  width:8vw;
   height: 40vh;
   padding:0.5vw;
 }

@@ -13,9 +13,9 @@
 
 <div class="container">
 
-<div style = "">
-  <h3>{{$ctrl.userName}}</h3>
-  <br/>
+<div style = "display:block; margin:1vw auto;">
+  <h3 style = "background:#FFFFFF; color:#444444; float:left;">{{$ctrl.userName}}</h3>
+
 </div>
 
   <!-- <p style="color:#222222;">Your story goes here...</p> -->
@@ -24,7 +24,8 @@
 
 
   <div class="form-group">
-    <textarea id = "storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus class="form-control" style="min-width: 100%" placeholder = "Your story goes here..."></textarea>
+    <textarea id = "storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus></textarea>
+
     <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
   </div>
 
