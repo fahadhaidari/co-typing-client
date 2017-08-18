@@ -1,40 +1,56 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-  <div class="sideBar">
+    <a class="navbar-brand" style="float:left;" href="#">{{$ctrl.userName}}</a>
+
+    <button type="button" class="btn btn-link" style="float:right;" ng-click="$ctrl.signout()">Log out</button>
+
+  </div>
+</nav>
 
 
-    <h4 style = "color:#333333;">Users</h4>
-      <div class = "" ng-repeat = "user in $ctrl.sharedService.getUsers()">
 
-        <small>{{user}}</small>
+<div class="sideBar">
 
-      </div>
+
+  <h4 style="color:#333333;">Users</h4>
+  <div class="" ng-repeat="user in $ctrl.sharedService.getUsers()">
+
+    <small>{{user}}</small>
 
   </div>
 
-<div class="container">
-
-<div style = "">
-  <h3>{{$ctrl.userName}}</h3>
-  <br/>
 </div>
 
+<div class="container">
+
+  <!-- <div style = "">
+  <h3>{{$ctrl.userName}}</h3>
+  <br/>
+</div> -->
+
   <!-- <p style="color:#222222;">Your story goes here...</p> -->
-  <small style = "float:left;">{{$ctrl.otherUserEdit}}</small>
   <!-- <h4>{{$ctrl.userName}}</h4> -->
 
 
   <div class="form-group">
-    <textarea id = "storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus class="form-control" style="min-width: 100%" placeholder = "Your story goes here..."></textarea>
+    <textarea id="storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus class="form-control" style="min-width: 100%" placeholder="Your story goes here..."></textarea>
     <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
   </div>
 
 
 
-  <div class="console">{{$ctrl.message}}</div>
+  <i style="float:left; color:#4477FF;">{{$ctrl.otherUserEdit}}</i>
 
-  <button type="button" class = "btn btn-link" style = "float:left;" ng-click="$ctrl.signout()">Log out</button>
 
-  <button type="button" class = "btn btn-info" style = "float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
+  <div class="">{{$ctrl.message}}</div>
+
+
+
+
+  <!-- <button type="button" class = "btn btn-link" style = "float:left;" ng-click="$ctrl.signout()">Log out</button> -->
+
+  <button type="button" class="btn btn-info" style="float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
 
 
 
