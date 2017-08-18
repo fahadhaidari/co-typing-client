@@ -4,7 +4,7 @@
     .module("cotyping")
     .controller("RoomController", RoomController);
 
-  function RoomController($state, $scope, SharedService) {
+  function RoomController($state, $scope, SharedService, $document) {
     console.log("Room Controller");
     const vm = this;
     vm.sharedService = SharedService;

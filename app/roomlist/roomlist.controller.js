@@ -13,6 +13,8 @@
     vm.sharedService = SharedService;
     vm.roomName = "";
 
+    vm.sharedService.setHideMainElements(true);
+
     vm.rooms = [
       // {
       //   name:"Room1",

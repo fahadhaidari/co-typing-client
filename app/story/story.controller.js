@@ -59,6 +59,7 @@
 
     socket.on("user signout", function(_info) {
       console.log("User ", _info.userName, " left ", _info.roomName);
+      vm.sharedService.setHideMainElements(false);
       // vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
@@ -67,6 +68,8 @@
 
     socket.on("signout success", function(_info) {
       console.log("User ", _info.userName, " left ", _info.roomName);
+      vm.sharedService.setHideMainElements(false);
+
       // vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
       socket.emit("signed out", _info);
       $scope.$applyAsync(function() {
@@ -78,6 +81,8 @@
     socket.on("signed out", function(_info) {
       console.log("User ", _info.userName, " left ", _info.roomName);
       vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
+      vm.sharedService.setHideMainElements(false);
+      
       vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';

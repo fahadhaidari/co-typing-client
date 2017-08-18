@@ -2,6 +2,7 @@ const socket = io.connect('http://localhost:8080');
 var userName = "";
 var roomName = "";
 var message = "";
+var hideMainElements = false;
 
 (function() {
 
@@ -42,6 +43,14 @@ var message = "";
 
           getMessage () {
             return message;
+          },
+
+          setHideMainElements(_bool) {
+            hideMainElements = _bool;
+          },
+
+          getHideMainElements() {
+            return hideMainElements;
           }
         }
 

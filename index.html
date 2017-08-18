@@ -16,12 +16,10 @@
     <ui-view></ui-view>
     <!-- <room-list></room-list> -->
 
-    <div class = "well">
+    <div id = "rooms" class = "well" ng-hide = "mainController.sharedService.getHideMainElements()" ng-controller = "MainController as mainController">
       <h3>Co-Typing: is a collaboration platform for writing</h3>
-    </div>
-
-    <div class="">
       <a class = "btn btn-success" ui-sref="rooms">Rooms</a>
+
     </div>
 
   </main>
