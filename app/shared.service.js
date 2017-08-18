@@ -3,6 +3,7 @@ var userName = "";
 var roomName = "";
 var message = "";
 var hideMainElements = false;
+var users = [];
 
 (function() {
 
@@ -51,6 +52,14 @@ var hideMainElements = false;
 
           getHideMainElements() {
             return hideMainElements;
+          },
+
+          setUser(_user) {
+            users.push(_user);
+          },
+
+          getUsers() {
+            return users;
           }
         }
 

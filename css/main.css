@@ -14,10 +14,20 @@ textarea {
   border-radius: 10px;
   box-shadow: none;
   outline: none;
+  width: 50vw;
+  margin: 1vw auto;
 }
 
 main {
   width: 98vw;
+  margin: 1vw auto;
+  background: #FFFFFF;
+  text-align: center;
+  display: block;
+}
+
+.container {
+  width: 80vw;
   margin: 1vw auto;
   background: #FFFFFF;
   text-align: center;

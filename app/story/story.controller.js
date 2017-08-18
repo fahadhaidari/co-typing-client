@@ -20,6 +20,9 @@
 
     console.log("I user ", vm.userName);
 
+    socket.emit("get users", "Room1");
+
+
 
 
     vm.keyUp = () => {
@@ -82,7 +85,7 @@
       console.log("User ", _info.userName, " left ", _info.roomName);
       vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
       vm.sharedService.setHideMainElements(false);
-      
+
       vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
@@ -93,6 +96,19 @@
     socket.on("joined", function(_userName) {
       console.log("User ", _userName, " joined the room");
       vm.message = vm.sharedService.getMessage();
+      vm.sharedService.setUser(_userName);
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
+    });
+
+    socket.on("room users", function(_users) {
+      console.log("Users in this room ------ " , _users);
+
+      for (var i = 0; i < _users.length; i++) {
+        vm.sharedService.setUser(_users[i]);
+      }
+
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
       });
