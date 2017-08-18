@@ -4,7 +4,7 @@
     .module("cotyping")
     .controller("StoryController", StoryController);
 
-  function StoryController($scope, $state, $window, SharedService) {
+  function StoryController($scope, $state, $window, $timeout, SharedService) {
     console.log("Story Controller");
     const vm = this;
     vm.sharedService = SharedService;
@@ -13,6 +13,8 @@
     vm.roomName = vm.sharedService.getRoomName();
 
     vm.message = vm.sharedService.getMessage();
+
+    vm.otherUserEdit = "";
 
     vm.inputText = "";
 
@@ -43,6 +45,12 @@
     socket.on("message", function(_info) {
       console.log("User ", _info.userName, " typed ", _info.message);
       vm.inputText = _info.message;
+
+      vm.otherUserEdit = _info.userName + " is typing";
+
+      $timeout(function() {
+       vm.otherUserEdit = "";
+    }, 3000);
 
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
