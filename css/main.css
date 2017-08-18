@@ -10,7 +10,10 @@ html, body {
 
 textarea {
   resize: none;
-  border: none;
+  border: solid 1px #DDDDDD;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none;
 }
 
 main {

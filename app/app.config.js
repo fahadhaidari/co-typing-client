@@ -21,6 +21,13 @@
         // component: "story"
       });
 
+    $stateProvider
+      .state("rooms", {
+        url: "/rooms",
+        component: "roomList"
+      });
+
+
     $urlServiceProvider.rules.otherwise({
       state: "home"
     })
