@@ -74,7 +74,7 @@ button {
 }
 
 .box {
-  width: 50vw;
+  width: 30vw;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -88,4 +88,11 @@ button {
 }
 :-moz-placeholder { /* Firefox 18- */
   font-size: 1rem;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .box {
+    width: 90vw;
+  }
 }
