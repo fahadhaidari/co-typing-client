@@ -86,6 +86,8 @@
       vm.sharedService.setMessage("User " + _info.userName + " left " + _info.roomName);
       vm.sharedService.setHideMainElements(false);
 
+      vm.sharedService.removeUser(_info.userName);
+      
       vm.message = vm.sharedService.getMessage();
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';

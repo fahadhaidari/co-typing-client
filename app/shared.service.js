@@ -60,6 +60,14 @@ var users = [];
 
           getUsers() {
             return users;
+          },
+
+          removeUser(_userName) {
+            for (var i = 0; i < users.length; i++) {
+              if(users[i] == _userName) {
+                users.splice(i, 1);
+              }
+            }
           }
         }
 
