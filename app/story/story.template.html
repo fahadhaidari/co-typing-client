@@ -1,18 +1,36 @@
+
+  <div class="sideBar">
+
+
+    <h4 style = "color:#333333;">Users</h4>
+      <div class = "" ng-repeat = "user in $ctrl.sharedService.getUsers()">
+
+        <small>{{user}}</small>
+
+      </div>
+
+  </div>
+
 <div class="container">
-  <button type="button" class = "btn btn-danger" style = "float:left;" ng-click="$ctrl.signout()">Log out</button>
-  <button type="button" class = "btn btn-default" style = "float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
 
-  <h2 style="color:#222222;">Story view...</h2>
+<div style = "display:block; margin:1vw auto; background:red">
+  <button type="button" class = "btn btn-danger" style = "float:right;" ng-click="$ctrl.signout()">Log out</button>
+  <h3 style = "background:#FFFFFF; color:#444444; float:right;">{{$ctrl.userName}}</h3>
+  
+</div>
+
+  <!-- <p style="color:#222222;">Your story goes here...</p> -->
   <small style = "float:left;">{{$ctrl.otherUserEdit}}</small>
+  <!-- <h4>{{$ctrl.userName}}</h4> -->
 
-  <h3>{{$ctrl.userName}}</h3>
+
   <textarea id = "storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" rows="20" autofocus></textarea>
 
   <div class="console">{{$ctrl.message}}</div>
-</div>
 
-<div class = "" ng-repeat = "user in $ctrl.sharedService.getUsers()">
 
-  <p>{{user}}</p>
+  <button type="button" class = "btn btn-default" style = "float:right;" name="button" ngclipboard data-clipboard-target="#storyText">Copy</button>
+
+
 
 </div>
