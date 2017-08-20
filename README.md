@@ -1,4 +1,4 @@
 # co-typing-client
 
-#App link:
+* App link:
 https://cotyping-db10a.firebaseapp.com/
