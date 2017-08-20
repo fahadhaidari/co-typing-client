@@ -50,6 +50,15 @@ button {
   display: block;
 }
 
+.btn {
+  /*border: solid 4px #FFFFFF;*/
+  /*border-radius: 10px;*/
+
+  /*background: #275B96;*/
+  /*color: #EEEEEE;*/
+  /*border-bottom: solid 1px #FFFFFF;*/
+}
+
 .sideBar {
   background: #FFFFFF;
   color:#4466FF;
@@ -74,7 +83,7 @@ button {
 }
 
 .box {
-  width: 30vw;
+  width: 20vw;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

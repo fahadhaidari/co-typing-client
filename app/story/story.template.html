@@ -21,7 +21,7 @@
 
 
   <div class="form-group">
-    <textarea id="storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus class="form-control" style="min-width: 100%" placeholder="Your story goes here..."></textarea>
+    <textarea id="storyText" ng-keyup="$ctrl.keyUp()" ng-model="$ctrl.inputText" name="name" autofocus class="form-control" style="min-width: 100%;" rows = "6" placeholder="Your story goes here..."></textarea>
     <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
   </div>
 
@@ -62,12 +62,12 @@
 
 </div> -->
 
-<div class="box margined">
+<div class="box margined" style = "float:left;">
 
 
 <div class="panel panel-success">
-  <div class="panel-heading" style = "background:#FFFFFF; color:#444444; border-bottom:solid 1px #DDDDDD; width:50%; margin: 1vw auto; text-align:center;">
-    <h3 class="panel-title"><b>Users in this room</b></h3>
+  <div class="panel-heading" style = "background:#FFFFFF; color:#444444; border-bottom:solid 1px #DDDDDD; width:80%; margin: 1vw; text-align:left;">
+    <h3 class="panel-title" style = "text-align:left;"><b>Users in this room</b></h3>
   </div>
   <div class="panel-body" ng-repeat="user in $ctrl.sharedService.getUsers()">
     <small>{{user}}</small>

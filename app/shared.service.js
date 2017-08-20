@@ -1,4 +1,6 @@
-const socket = io.connect('http://localhost:8080');
+// const socket = io.connect('http://localhost:3000');
+const socket = io.connect('https://cotyping-server.herokuapp.com');
+
 var userName = "";
 var roomName = "";
 var message = "";

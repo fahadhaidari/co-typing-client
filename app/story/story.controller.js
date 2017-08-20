@@ -53,7 +53,7 @@
 
       $timeout(function() {
        vm.otherUserEdit = "";
-    }, 5000);
+    }, 3000);
 
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';

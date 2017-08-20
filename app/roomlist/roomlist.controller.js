@@ -31,7 +31,9 @@
     ];
 
 
-    $http.get("http://localhost:8080/rooms").then((rooms) => {
+    // $http.get("http://localhost:3000/rooms").then((rooms) => {
+    $http.get("https://cotyping-server.herokuapp.com/rooms").then((rooms) => {
+
       vm.rooms = rooms.data;
       console.log("Rooms ", rooms.data);
     })
